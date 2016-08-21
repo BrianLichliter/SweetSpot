@@ -1,0 +1,78 @@
+<style>
+	#navbar-extended {
+		margin-bottom: 10px;
+		width: 100%;
+		background-color: rgb(41,67,105);
+		position: fixed;
+	}
+	.row {
+		text-align: center;
+	}
+	.table {
+		background-color: rgb(62,64,66);
+		height: 100px;
+		width: 100px;
+		margin: 0 auto 0 auto;
+	}
+	.circle {
+		border-radius: 100%;
+		height: 25px;
+		width: 25px;
+		background-color: green;
+	}
+	.center {
+		margin: 0 auto 0 auto;
+		text-align: center;
+	}
+	.right {
+		text-align: right;
+		float: right;
+		margin-right: 0;
+	}
+	.red {
+		background-color: red !important;
+	}
+</style>
+
+<div ng-controller="IndexController">
+
+	<super-navbar>
+	</super-navbar>
+
+	<div id = "navbar-extended">
+		<div class = "padding text-white text-center">
+		  	<h2 class = "text-white">{{space.Name}}</h2>
+		    <h3 class = "text-white">{{space.Address}}</h3>
+		</div>
+	</div>
+	<div class = "row" id = "buffer-row">
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+	</div>
+	<div class="row row-center">
+	  <div class="col"></div>
+	  <div class="col"><div class = "circle center" ng-class = "{'red':space.Seat1}"></div></div>
+	  <div class="col"></div>
+	</div>
+	<div class="row row-center">
+	  <div class="col"><div class = "circle right" ng-class = "{'red':space.Seat4}"></div></div>
+	  <div class="col"><div class = "table"></div></div>
+	  <div class="col"><div class = "circle" ng-class = "{'red':space.Seat2}"></div></div>
+	</div>
+	<div class="row row-center">
+	  <div class="col"></div>
+	  <div class="col"><div class = "circle center" ng-class = "{'red':space.Seat3}"></div></div>
+	  <div class="col"></div>
+	</div>
+
+	<button ng-click = "getAvail()" class="button button-block button-positive">
+	  Refresh
+	</button>
+	<br>
+	<h3 class = "center">{{refreshing}}</h3>
+
+</div>

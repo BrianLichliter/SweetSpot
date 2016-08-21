@@ -1,0 +1,49 @@
+<style>
+	.distance {
+		font-size: .8em;
+		color: rgb(162,164,166);
+	}
+	#navbar-extended {
+		margin-bottom: 10px;
+		width: 100%;
+		background-color: rgb(41,67,105);
+		position: fixed;
+	}
+	.cards {
+		padding-top: 30px;
+	}
+</style>
+
+<div ng-controller="IndexController">
+	<super-navbar>
+		<super-navbar-title>
+			Spaces
+		</super-navbar-title>
+	</super-navbar>
+	<div id = "navbar-extended">
+		<div class = "padding text-white">
+			Sort by: {{sortBy}}
+		</div>
+	</div>
+	<div class="padding cards">
+		<div class="card" ng-repeat="space in spaces" ng-click = "openSpacePage(space.id)">
+			<div class = "row">
+				<div class = "col col-67">
+					<div class = "row">
+						<div class = "col">
+							<h2>{{space.Name}}</h2>
+						</div>
+					</div>
+					<div class = "row">
+						<div class = "col">
+							<span class = "distance">{{spaceDistance[space.Address]}}</span> {{space.Address}}
+						</div>
+					</div>
+				</div>
+				<div class = "col col-center">
+					<!-- <h4>47/68<br>Seats</h4> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

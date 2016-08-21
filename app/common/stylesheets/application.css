@@ -1,0 +1,13 @@
+.text-right {
+	text-align: right;
+	float: right;
+}
+
+.text-center {
+	text-align: center;
+	float: center;
+}
+
+.text-white {
+	color: white;
+}
